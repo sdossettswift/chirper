@@ -1,10 +1,6 @@
 class ChirpsController < ApplicationController
     def index
-        if params[:author]
-            @chirps = Chirp.where(author: params[:author])
-        else
-            @chirps = Chirp.all
-        end
+        @chirps = Chirp.where(params.permit(:author))
     end
 
     def index
@@ -12,17 +8,17 @@ class ChirpsController < ApplicationController
     end
 
     def new
-        @chirp = Chirp.new
-
+        @chirp = Chirp.new(params.permit(:author))
     end
 
     def edit
-        @chirp = Chirp.find(params[:id])
+        @chirp = Chirp.find_by(params.permit(:author, :id))
     end
 
     def show
-        @chirp = Chirp.find(params[:id])
+        @chirp = Chirp.find_by(params.permit(:author, :id))
     end
+
 
     def create
         @chirp = Chirp.new(params[:chirp].permit(:author, :body))

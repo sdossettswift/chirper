@@ -1,26 +1,21 @@
 Rails.application.routes.draw do
-  get 'chirps/index'
 
-  get 'chirps/new'
+    get 'chirps/index'
 
-  get 'chirps/edit'
+    get 'chirps/new'
 
-  get 'chirps/show'
+    get 'chirps/edit'
+
+    get 'chirps/show'
 
     resources :chirps
 
     scope ':author', as: 'author' do
-        resources :chirps
+        resources :chirps, except: ['create', 'update', 'destroy']
     end
-
 
     get 'home/index'
     root 'home#index'
-    get 'chirps/index'
-    get 'chirps/new'
-    get 'chirps/edit'
-    get 'chirps/show'
-
 
 
     # The priority is based upon order of creation: first created -> highest priority.
