@@ -12,7 +12,7 @@ class ChirpsController < ApplicationController
     end
 
     def edit
-        @chirp = Chirp.find_by(params.permit(:author, :id))
+        @chirp = Chirp.find_by(params.permit(:author, :id, :pic))
     end
 
     def show
@@ -21,7 +21,7 @@ class ChirpsController < ApplicationController
 
 
     def create
-        @chirp = Chirp.new(params[:chirp].permit(:author, :body))
+        @chirp = Chirp.new(params[:chirp].permit(:author, :body, :pic))
         if @chirp.save
             redirect_to chirp_path(@chirp)
         else

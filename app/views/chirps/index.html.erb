@@ -3,6 +3,7 @@
 <hr>
 <% @chirps.each do |chirp| %>
   <p><%= chirp.body %></p>
+    <%= image_tag chirp.pic.url, width: '100' %>
   <p>
     - <%= link_to chirp.author, author_chirps_path(chirp.author) %>
   </p>
