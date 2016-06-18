@@ -1,0 +1,11 @@
+@import 'https://necolas.github.io/normalize.css/3.0.3/normalize.css';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'https://fonts.googleapis.com/css?family=Prompt|Slabo+27px';
+@import 'https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911';
+
+$purple:#8e44ad;
+
+*{
+  @link-color: $purple;
+}
