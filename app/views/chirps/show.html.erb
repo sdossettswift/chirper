@@ -1,0 +1,8 @@
+<h1>Chirp</h1>
+<p><%= @chirp.body %></p>
+<p>
+- <i><%= @chirp.author %></i>
+</p>
+<%= link_to "See All Chirps", chirps_path %>
+<%= link_to "Edit this Chirp", edit_chirp_path(@chirp) %>
+<%= link_to "Delete this Chirp", chirp_path(@chirp), method: 'delete' %>
